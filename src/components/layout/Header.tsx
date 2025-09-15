@@ -3,13 +3,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   // Handle scroll effect
-  if (typeof window !== 'undefined') {
-    window.addEventListener('scroll', () => {
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => {
       if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
@@ -19,11 +21,11 @@ const Header = () => {
   }
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-[var(--color-background)] shadow-lg py-1' 
-          : 'bg-[var(--color-background-transparent)] backdrop-blur-lg py-1'
+        isScrolled
+          ? "bg-[var(--color-background)] shadow-lg py-1"
+          : "bg-[var(--color-background-transparent)] backdrop-blur-lg py-1"
       }`}
     >
       <div className="container mx-auto px-16">
@@ -45,16 +47,26 @@ const Header = () => {
               { href: "/", label: "Accueil" },
               { href: "/vehicules", label: "Véhicules d'occasion" },
               { href: "/financement", label: "Financement" },
-              { href: "/a-propos", label: "À Propos" },
+              { href: "/#a-propos", label: "À Propos" },
               { href: "/service", label: "Service et entretien" },
             ].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-[var(--color-text)] hover:text-[var(--color-primary)] font-medium transition-colors duration-300 group"
+                className={`relative font-medium transition-colors duration-300 group ${
+                  pathname === link.href
+                    ? "text-[var(--color-primary)]"
+                    : "text-[var(--color-text)] hover:text-[var(--color-primary)]"
+                }`}
               >
                 {link.label}
-                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-[var(--color-primary)] transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100" />
+                <span
+                  className={`absolute inset-x-0 bottom-0 h-0.5 bg-[var(--color-primary)] transform origin-left transition-transform duration-300 ${
+                    pathname === link.href
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
               </Link>
             ))}
           </nav>
