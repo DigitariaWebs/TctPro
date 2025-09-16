@@ -73,7 +73,7 @@ const Header = () => {
 
           {/* Contact Button */}
           <Link
-            href="/contact"
+            href="/#contact"
             className="bg-[var(--color-primary)] text-[var(--color-text-dark)] px-6 py-2 rounded-lg font-semibold 
                      hover:bg-[var(--color-primary-light)] transform hover:scale-105 transition-all 
                      duration-300 shadow-md hover:shadow-[var(--shadow-primary)] active:scale-95"

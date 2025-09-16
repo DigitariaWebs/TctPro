@@ -113,15 +113,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin size={18} className="text-[var(--color-primary)] mt-1 mr-3 flex-shrink-0" />
-                <span>123 Rue Principale, Québec, QC G1X 2Y3</span>
+                <span>11770 5e Avenue, Montréal, QC H1E 2X4</span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="text-[var(--color-primary)] mr-3 flex-shrink-0" />
                 <a 
-                  href="tel:+14189876543" 
+                  href="tel:+15144943795" 
                   className="hover:text-[var(--color-primary)] transition-colors duration-300"
                 >
-                  (418) 987-6543
+                  (514) 494-3795
                 </a>
               </li>
               <li className="flex items-center">

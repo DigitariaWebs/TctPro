@@ -148,7 +148,7 @@ const UsedVehiclesSection: React.FC = () => {
                   alt={vehicle.name}
                   className="w-full h-64 object-cover"
                   variants={{
-                    hover: { scale: 1.05 },
+                    hover: {},
                     initial: { scale: 1 },
                   }}
                   transition={{ duration: 0.1 }}

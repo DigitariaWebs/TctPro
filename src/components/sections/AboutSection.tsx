@@ -16,8 +16,7 @@ export default function AboutSection() {
           <div className="relative w-full md:max-w-[380px] lg:max-w-[400px] justify-self-center md:justify-self-start order-2 md:order-1 mb-8 md:mb-0 md:ml-6 lg:ml-8">
             {/* Accent rounded frame behind the image */}
             <div
-              className="absolute -inset-2 sm:-inset-3 md:-inset-4 rounded-[2.25rem] md:rounded-[3.5rem] border-[6px] sm:border-[8px] md:border-[10px] opacity-60"
-              style={{ borderColor: "var(--color-primary)" }}
+              className="absolute -inset-2 sm:-inset-3 md:-inset-4 rounded-[2.25rem] md:rounded-[3.5rem] border-[6px] sm:border-[8px] md:border-[10px] opacity-60 border-[var(--color-primary)]"
               aria-hidden="true"
             />
 
@@ -50,73 +49,42 @@ export default function AboutSection() {
             className="relative order-1 md:order-2"
           >
             <p className="text-sm font-semibold tracking-wide">
-              <span style={{ color: "var(--color-primary)" }}>
+              <span className="text-[var(--color-primary)]">
                 Expertise Automobile
               </span>
             </p>
-            <h2
-              className="mt-2 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight"
-              style={{ color: "var(--color-text)" }}
-            >
+            <h2 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-[var(--color-text)]">
               À Votre Service
             </h2>
 
-            <div
-              className="mt-4 space-y-3 text-[15px] md:text-lg leading-relaxed text-justify"
-              style={{ color: "var(--color-text)" }}
-            >
+            <div className="mt-4 space-y-3 text-[15px] md:text-lg leading-relaxed text-justify text-[var(--color-text)]">
               {/* Encadré storytelling */}
               <div
-                className="relative rounded-2xl p-5 sm:p-6 ring-1 ring-black/5 shadow-sm overflow-hidden"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(245, 158, 11, 0.05) 0%, rgba(15, 23, 42, 0.8) 100%)",
-                  borderColor: "var(--color-primary)",
-                }}
+                className="relative rounded-2xl p-5 sm:p-6 ring-1 ring-black/5 shadow-sm overflow-hidden bg-[var(--color-background-light)] border-[var(--color-primary)]"
                 aria-label="Encadré: Notre centre automobile"
               >
-                <div
-                  className="absolute -inset-px rounded-[inherit] pointer-events-none"
-                  style={{
-                    boxShadow: "inset 0 0 0 1px var(--color-primary-light)",
-                  }}
-                />
-                <h3
-                  className="text-xl font-bold mb-3"
-                  style={{ color: "var(--color-primary-light)" }}
-                >
+                <div className="absolute -inset-px rounded-[inherit] pointer-events-none shadow-[inset_0_0_0_1px_var(--color-primary-light)]" />
+                <h3 className="text-xl font-bold mb-3 text-[var(--color-primary-light)]">
                   Un centre complet à votre service
                 </h3>
-                <p style={{ color: "var(--color-text)" }}>
+                <p className="text-[var(--color-text)]">
                   Notre{" "}
-                  <span
-                    className="font-semibold"
-                    style={{ color: "var(--color-primary-light)" }}
-                  >
+                  <span className="font-semibold text-[var(--color-primary-light)]">
                     station multi-services
                   </span>{" "}
                   a été conçue pour répondre à tous vos besoins automobiles en
                   un seul endroit. Que vous souhaitiez entretenir votre
                   véhicule, lui redonner son éclat d&apos;origine, changer de
                   look, ou même acquérir une nouvelle voiture, notre équipe de{" "}
-                  <span
-                    className="font-semibold"
-                    style={{ color: "var(--color-primary)" }}
-                  >
+                  <span className="font-semibold text-[var(--color-primary)]">
                     professionnels
                   </span>{" "}
                   est là pour vous.
                 </p>
-                <div
-                  className="mt-3 space-y-3"
-                  style={{ color: "var(--color-text)" }}
-                >
+                <div className="mt-3 space-y-3 text-[var(--color-text)]">
                   <p>
                     Avec plus de{" "}
-                    <span
-                      className="font-semibold"
-                      style={{ color: "var(--color-primary)" }}
-                    >
+                    <span className="font-semibold text-[var(--color-primary)]">
                       10 ans d&apos;expertise
                     </span>{" "}
                     dans le secteur automobile, nous mettons notre savoir-faire
@@ -144,7 +112,7 @@ export default function AboutSection() {
                 d="M10 60 C 40 10, 80 110, 110 30 C 130 -10, 160 120, 190 20"
                 stroke="currentColor"
                 strokeWidth="2"
-                style={{ color: "var(--color-muted)" }}
+                className="text-[var(--color-muted)]"
               />
             </svg>
           </motion.div>
