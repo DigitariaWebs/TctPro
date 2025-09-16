@@ -13,7 +13,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 items-center">
           {/* Image block with framed accent */}
-          <div className="relative w-full md:max-w-[380px] lg:max-w-[400px] justify-self-center md:justify-self-start order-2 md:order-1 mb-8 md:mb-0 md:ml-6 lg:ml-8">
+          <div className="relative w-full md:max-w-[440px] lg:max-w-[460px] justify-self-center md:justify-self-start order-2 md:order-1 mb-8 md:mb-0 md:ml-6 lg:ml-8">
             {/* Accent rounded frame behind the image */}
             <div
               className="absolute -inset-2 sm:-inset-3 md:-inset-4 rounded-[2.25rem] md:rounded-[3.5rem] border-[6px] sm:border-[8px] md:border-[10px] opacity-60 border-[var(--color-primary)]"

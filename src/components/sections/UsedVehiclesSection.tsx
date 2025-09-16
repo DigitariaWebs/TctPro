@@ -25,7 +25,7 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.4,
     },
   },
 };
@@ -39,13 +39,13 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.5,
     },
   },
   hover: {
     y: -4,
     transition: {
-      duration: 0.2,
+      duration: 0.1,
     },
   },
 };
@@ -74,32 +74,9 @@ const UsedVehiclesSection: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
-            style={{
-              backgroundColor: "rgba(245, 158, 11, 0.1)",
-              border: "1px solid rgba(245, 158, 11, 0.2)",
-            }}
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Shield
-              className="w-4 h-4"
-              style={{ color: "var(--color-primary)" }}
-            />
-            <span
-              className="text-sm font-medium"
-              style={{ color: "var(--color-primary)" }}
-            >
-              Véhicules Certifiés
-            </span>
-          </motion.div>
-
           <motion.h2
             className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
-            style={{ color: "var(--color-text)" }}
+            style={{ color: "var(--color-primary)" }}
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -448,7 +425,7 @@ const UsedVehiclesSection: React.FC = () => {
                 className="w-4 h-4 flex-shrink-0"
                 style={{ color: "var(--color-primary)" }}
               />
-              <span className="whitespace-nowrap">Inspection 150 points</span>
+              <span className="whitespace-nowrap">Véhicules Certifiés</span>
             </div>
             <div className="flex items-center gap-2">
               <Shield

@@ -35,7 +35,7 @@ const HeroSection: React.FC = () => {
       {/* Overlay Grid */}
       <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
         {/* Top Left Quadrant - Inventaire neuf */}
-        <div className="relative flex items-center justify-center border-r-3 border-b-3 border-white/80 bg-black/30">
+        <div className="relative flex items-center justify-center border-r-3 border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
               Inventaire neuf
@@ -44,7 +44,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Top Right Quadrant - Inventaire d'occasion */}
-        <div className="relative flex items-center justify-center border-l-3 border-b-3 border-white/80 bg-black/30">
+        <div className="relative flex items-center justify-center border-l-3 border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
               Inventaire d&apos;occasion
@@ -53,7 +53,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Bottom Left Quadrant - Rendez-vous au service */}
-        <div className="relative flex items-center justify-center border-r-3 border-t-3 border-white/80 bg-black/30">
+        <div className="relative flex items-center justify-center border-r-3 border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
               Rendez-vous au service
@@ -62,7 +62,7 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Bottom Right Quadrant - Offres */}
-        <div className="relative flex items-center justify-center border-l-3 border-t-3 border-white/80 bg-black/30">
+        <div className="relative flex items-center justify-center border-l-3 border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
               Offres
