@@ -142,7 +142,6 @@ const UsedVehiclesSection: React.FC = () => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.1 }}
             >
-
               <div className="relative overflow-hidden">
                 <motion.img
                   src={vehicle.image}
@@ -377,6 +376,9 @@ const UsedVehiclesSection: React.FC = () => {
                     }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.2 }}
+                    onClick={() =>
+                      (window.location.href = "https://www.picci.ca/cars")
+                    }
                   >
                     Réserver un essai
                   </motion.button>
@@ -393,6 +395,9 @@ const UsedVehiclesSection: React.FC = () => {
                     }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.2 }}
+                    onClick={() =>
+                      (window.location.href = "https://www.picci.ca/cars")
+                    }
                   >
                     Voir les détails
                   </motion.button>
@@ -416,6 +421,7 @@ const UsedVehiclesSection: React.FC = () => {
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
             }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => (window.location.href = "https://www.picci.ca/cars")}
           >
             <span>Voir tous nos véhicules</span>
             <motion.div
