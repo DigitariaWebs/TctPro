@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, Smartphone, Mail, MapPin, Users, MessageCircle } from "lucide-react";
+import { Phone, Smartphone, Mail, MapPin, Users } from "lucide-react";
 import { useModal } from "@/components/providers/ModalProvider";
 
 export default function ContactSection() {

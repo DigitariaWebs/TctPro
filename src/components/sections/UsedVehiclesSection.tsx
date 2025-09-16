@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Fuel, Settings, Calendar, Heart, Star, Shield, CheckCircle } from "lucide-react";
+import { ArrowRight, Fuel, Settings, Calendar, Star, Shield, CheckCircle } from "lucide-react";
 import { featuredVehicles } from "@/Data/Cars";
 
 const containerVariants = {

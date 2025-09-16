@@ -49,9 +49,9 @@ const Header = () => {
               { href: "#", label: "Financement" },
               { href: "/#a-propos", label: "À Propos" },
               { href: "#", label: "Service et entretien" },
-            ].map((link) => (
+            ].map((link, index) => (
               <Link
-                key={link.href}
+                key={`${link.href}-${index}`}
                 href={link.href}
                 className={`relative font-medium transition-colors duration-300 group ${
                   pathname === link.href
