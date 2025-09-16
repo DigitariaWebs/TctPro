@@ -53,6 +53,7 @@ const cardVariants = {
 const UsedVehiclesSection: React.FC = () => {
   return (
     <motion.section
+      id="vehicules"
       className="py-20 relative overflow-hidden"
       style={{ backgroundColor: "var(--color-background)" }}
       initial="hidden"

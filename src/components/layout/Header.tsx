@@ -45,10 +45,10 @@ const Header = () => {
           <nav className="hidden lg:flex items-center space-x-8">
             {[
               { href: "/", label: "Accueil" },
-              { href: "/vehicules", label: "Véhicules d'occasion" },
-              { href: "/financement", label: "Financement" },
+            { href: "/#vehicules", label: "Véhicules d'occasion" },
+              { href: "#", label: "Financement" },
               { href: "/#a-propos", label: "À Propos" },
-              { href: "/service", label: "Service et entretien" },
+              { href: "#", label: "Service et entretien" },
             ].map((link) => (
               <Link
                 key={link.href}

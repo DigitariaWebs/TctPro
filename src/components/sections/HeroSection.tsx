@@ -1,19 +1,39 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from "react";
 
 const HeroSection: React.FC = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/HeroSection.jpg";
+    img.onload = () => {
+      setImageLoaded(true);
+    };
+
+    // Fallback in case image takes too long to load
+    const timeout = setTimeout(() => {
+      setImageLoaded(true);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <section className="relative w-full h-screen">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+      {/* Background Image with blur transition */}
+      <div
+        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700 ease-out ${
+          imageLoaded ? "filter-none" : "filter blur-sm scale-105"
+        }`}
         style={{
-          backgroundImage: "url('/HeroSection.jpg')"
+          backgroundImage: "url('/HeroSection.jpg')",
         }}
       />
-      
+
       {/* Overlay Grid */}
       <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
-        
         {/* Top Left Quadrant - Inventaire neuf */}
         <div className="relative flex items-center justify-center border-r-3 border-b-3 border-white/80 bg-black/30">
           <div className="text-center">
@@ -49,7 +69,6 @@ const HeroSection: React.FC = () => {
             </h2>
           </div>
         </div>
-
       </div>
     </section>
   );
