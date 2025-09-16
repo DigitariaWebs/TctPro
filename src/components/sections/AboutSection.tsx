@@ -63,13 +63,13 @@ export default function AboutSection() {
                 className="relative rounded-2xl p-5 sm:p-6 ring-1 ring-black/5 shadow-sm overflow-hidden bg-[var(--color-background-light)] border-[var(--color-primary)]"
                 aria-label="Encadré: Notre centre automobile"
               >
-                <div className="absolute -inset-px rounded-[inherit] pointer-events-none shadow-[inset_0_0_0_1px_var(--color-primary-light)]" />
-                <h3 className="text-xl font-bold mb-3 text-[var(--color-primary-light)]">
+                <div className="absolute -inset-px rounded-[inherit] pointer-events-none shadow-[inset_0_0_0_1px_var(--color-primary)]" />
+                <h3 className="text-xl font-bold mb-3 text-[var(--color-primary)]">
                   Un centre complet à votre service
                 </h3>
                 <p className="text-[var(--color-text)]">
                   Notre{" "}
-                  <span className="font-semibold text-[var(--color-primary-light)]">
+                  <span className="font-semibold text-[var(--color-primary)]">
                     station multi-services
                   </span>{" "}
                   a été conçue pour répondre à tous vos besoins automobiles en

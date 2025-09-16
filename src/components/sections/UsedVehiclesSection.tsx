@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Fuel, Settings, Calendar, Star, Shield, CheckCircle } from "lucide-react";
 import { featuredVehicles } from "@/Data/Cars";
+import { useModal } from "@/components/providers/ModalProvider";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -51,6 +52,8 @@ const cardVariants = {
 };
 
 const UsedVehiclesSection: React.FC = () => {
+  const { openModal } = useModal();
+
   return (
     <motion.section
       id="vehicules"
@@ -354,9 +357,7 @@ const UsedVehiclesSection: React.FC = () => {
                     }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.2 }}
-                    onClick={() =>
-                      (window.location.href = "https://www.picci.ca/cars")
-                    }
+                    onClick={() => openModal("consultation")}
                   >
                     Réserver un essai
                   </motion.button>

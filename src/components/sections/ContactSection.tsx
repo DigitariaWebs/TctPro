@@ -14,19 +14,13 @@ export default function ContactSection() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14 md:mb-16">
-          <p
-            className="text-sm font-semibold text-[var(--color-primary-dark)]"
-          >
+          <p className="text-sm font-semibold text-[var(--color-primary-dark)]">
             Parlons ensemble
           </p>
-          <h2
-            className="mt-2 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-[var(--color-primary)]"
-          >
+          <h2 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-[var(--color-primary)]">
             Contactez-nous
           </h2>
-          <p
-            className="mt-4 text-[15px] md:text-base max-w-3xl mx-auto opacity-90 text-[var(--color-text)]"
-          >
+          <p className="mt-4 text-[15px] md:text-base max-w-3xl mx-auto opacity-90 text-[var(--color-text)]">
             Prêt à commencer ? Planifiez une consultation gratuite et obtenez
             une évaluation personnalisée de vos besoins.
           </p>
@@ -34,26 +28,18 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 items-stretch">
           <div className="space-y-8">
-            <h3
-              className="text-2xl md:text-3xl font-extrabold text-[var(--color-text)]"
-            >
+            <h3 className="text-2xl md:text-3xl font-extrabold text-[var(--color-text)]">
               Informations de contact
             </h3>
 
             <div className="space-y-9">
               <a href="tel:5144943795" className="block">
                 <div className="group flex items-center gap-4 p-4 rounded-2xl ring-1 ring-white/10 transition-all hover:-translate-y-0.5 bg-[var(--color-background-light)]">
-                  <div
-                    className="w-12 h-12 rounded-2xl grid place-items-center bg-[var(--color-primary-light)]"
-                  >
-                    <Smartphone
-                      className="w-6 h-6 text-[var(--color-background)]"
-                    />
+                  <div className="w-12 h-12 rounded-2xl grid place-items-center bg-[var(--color-primary-light)]">
+                    <Smartphone className="w-6 h-6 text-[var(--color-background)]" />
                   </div>
                   <div>
-                    <h4
-                      className="font-semibold text-[var(--color-text)]"
-                    >
+                    <h4 className="font-semibold text-[var(--color-text)]">
                       Téléphone
                     </h4>
                     <p className="transition-colors group-hover:text-[var(--color-primary)] opacity-80 text-[var(--color-text)]">
@@ -63,23 +49,17 @@ export default function ContactSection() {
                 </div>
               </a>
 
-              <a href="mailto:contact@tctpro.ca" className="block">
+              <a href="mailto:info@tigerbecars.ca" className="block">
                 <div className="group flex items-center gap-4 p-4 rounded-2xl ring-1 ring-white/10 transition-all hover:-translate-y-0.5 bg-[var(--color-background-light)]">
-                  <div
-                    className="w-12 h-12 rounded-2xl grid place-items-center bg-[var(--color-primary)]"
-                  >
-                    <Mail
-                      className="w-6 h-6 text-[var(--color-background)]"
-                    />
+                  <div className="w-12 h-12 rounded-2xl grid place-items-center bg-[var(--color-primary)]">
+                    <Mail className="w-6 h-6 text-[var(--color-background)]" />
                   </div>
                   <div>
-                    <h4
-                      className="font-semibold text-[var(--color-text)]"
-                    >
+                    <h4 className="font-semibold text-[var(--color-text)]">
                       Email
                     </h4>
                     <p className="transition-colors group-hover:text-[var(--color-primary)] opacity-80 text-[var(--color-text)]">
-                      contact@tctpro.ca
+                      info@tigerbecars.ca
                     </p>
                   </div>
                 </div>
@@ -92,22 +72,15 @@ export default function ContactSection() {
                 className="block"
               >
                 <div className="group flex items-center gap-4 p-4 rounded-2xl ring-1 ring-white/10 transition-all hover:-translate-y-0.5 bg-[var(--color-background-light)]">
-                  <div
-                    className="w-12 h-12 rounded-2xl grid place-items-center bg-[var(--color-primary-dark)]"
-                  >
-                    <MapPin
-                      className="w-6 h-6 text-white"
-                    />
+                  <div className="w-12 h-12 rounded-2xl grid place-items-center bg-[var(--color-primary-dark)]">
+                    <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4
-                      className="font-semibold text-[var(--color-text)]"
-                    >
+                    <h4 className="font-semibold text-[var(--color-text)]">
                       Adresse
                     </h4>
                     <p className="transition-colors group-hover:text-[var(--color-primary)] opacity-80 text-[var(--color-text)]">
-                      11770 5e Avenue
-                      Montréal, QC H1E 2X4
+                      11770 5e Avenue Montréal, QC H1E 2X4
                     </p>
                   </div>
                 </div>
@@ -116,20 +89,12 @@ export default function ContactSection() {
           </div>
 
           <div>
-            <div
-              className="rounded-3xl p-10 text-center shadow-sm ring-1 ring-white/10 h-full flex flex-col justify-center items-center bg-[var(--color-background-light)]"
-            >
-              <Users
-                className="w-14 h-14 mx-auto mb-5 opacity-90 text-[var(--color-text)]"
-              />
-              <h3
-                className="text-2xl md:text-3xl font-extrabold mb-4 text-[var(--color-text)]"
-              >
+            <div className="rounded-3xl p-10 text-center shadow-sm ring-1 ring-white/10 h-full flex flex-col justify-center items-center bg-[var(--color-background-light)]">
+              <Users className="w-14 h-14 mx-auto mb-5 opacity-90 text-[var(--color-text)]" />
+              <h3 className="text-2xl md:text-3xl font-extrabold mb-4 text-[var(--color-text)]">
                 Consultation gratuite
               </h3>
-              <p
-                className="text-[15px] md:text-base mb-8 max-w-2xl mx-auto text-[var(--color-text)]"
-              >
+              <p className="text-[15px] md:text-base mb-8 max-w-2xl mx-auto text-[var(--color-text)]">
                 Contactez-nous aujourd&apos;hui pour une évaluation
                 personnalisée de vos besoins. Notre équipe vous accompagnera
                 dans la mise en place des services adaptés.

@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="relative bg-[var(--color-background)] text-[var(--color-text)] pt-16 pb-8">
       {/* Accent border at top */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-primary-dark)] via-[var(--color-primary)] to-[var(--color-primary-light)]"></div>
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--color-primary-dark)] via-[var(--color-primary)] to-[var(--color-primary)]"></div>
       
       <div className="container mx-auto px-4 md:px-8 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -127,10 +127,10 @@ const Footer = () => {
               <li className="flex items-center">
                 <Mail size={18} className="text-[var(--color-primary)] mr-3 flex-shrink-0" />
                 <a 
-                  href="mailto:info@tctpro.ca" 
+                  href="mailto:info@tigerbecars.ca" 
                   className="hover:text-[var(--color-primary)] transition-colors duration-300"
                 >
-                  info@tctpro.ca
+                  info@tigerbecars.ca
                 </a>
               </li>
               <li className="flex items-start">
