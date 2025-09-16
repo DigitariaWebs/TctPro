@@ -11,7 +11,7 @@ export default function AboutSection() {
       className="relative py-12 md:py-20 lg:py-24"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center">
+        <div className="grid md:grid-cols-2 items-center">
           {/* Image block with framed accent */}
           <div className="relative w-full md:max-w-[380px] lg:max-w-[400px] justify-self-center md:justify-self-start order-2 md:order-1 mb-8 md:mb-0 md:ml-6 lg:ml-8">
             {/* Accent rounded frame behind the image */}
@@ -62,7 +62,7 @@ export default function AboutSection() {
             </h2>
 
             <div
-              className="mt-4 space-y-3 text-[15px] md:text-base leading-relaxed text-justify"
+              className="mt-4 space-y-3 text-[15px] md:text-lg leading-relaxed text-justify"
               style={{ color: "var(--color-text)" }}
             >
               {/* Encadré storytelling */}
@@ -97,8 +97,8 @@ export default function AboutSection() {
                   </span>{" "}
                   a été conçue pour répondre à tous vos besoins automobiles en
                   un seul endroit. Que vous souhaitiez entretenir votre
-                  véhicule, lui redonner son éclat d'origine, changer de look,
-                  ou même acquérir une nouvelle voiture, notre équipe de{" "}
+                  véhicule, lui redonner son éclat d&apos;origine, changer de
+                  look, ou même acquérir une nouvelle voiture, notre équipe de{" "}
                   <span
                     className="font-semibold"
                     style={{ color: "var(--color-primary)" }}
@@ -117,15 +117,15 @@ export default function AboutSection() {
                       className="font-semibold"
                       style={{ color: "var(--color-primary)" }}
                     >
-                      10 ans d'expertise
+                      10 ans d&apos;expertise
                     </span>{" "}
                     dans le secteur automobile, nous mettons notre savoir-faire
                     à votre service pour vous offrir une expérience complète et
                     personnalisée.
                   </p>
                   <p>
-                    De l'entretien mécanique au detailing, en passant par la
-                    customisation et la vente de véhicules, TCT Pro est votre
+                    De l&apos;entretien mécanique au detailing, en passant par
+                    la customisation et la vente de véhicules, TCT Pro est votre
                     partenaire automobile de confiance.
                   </p>
                 </div>
@@ -141,10 +141,10 @@ export default function AboutSection() {
               aria-hidden="true"
             >
               <path
-                d="M20 50 L50 50 L60 40 L140 40 L150 50 L180 50 M40 50 L40 60 M160 50 L160 60 M50 60 C50 65, 45 70, 40 70 C35 70, 30 65, 30 60 C30 55, 35 50, 40 50 C45 50, 50 55, 50 60 M170 60 C170 65, 165 70, 160 70 C155 70, 150 65, 150 60 C150 55, 155 50, 160 50 C165 50, 170 55, 170 60"
+                d="M10 60 C 40 10, 80 110, 110 30 C 130 -10, 160 120, 190 20"
                 stroke="currentColor"
                 strokeWidth="2"
-                style={{ color: "var(--color-primary)" }}
+                style={{ color: "var(--color-muted)" }}
               />
             </svg>
           </motion.div>

@@ -27,7 +27,7 @@ const HeroSection: React.FC = () => {
         <div className="relative flex items-center justify-center border-l-3 border-b-3 border-white/80 bg-black/30">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
-              Inventaire d'occasion
+              Inventaire d&apos;occasion
             </h2>
           </div>
         </div>
