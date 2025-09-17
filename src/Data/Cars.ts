@@ -9,7 +9,6 @@ interface Vehicle {
   image: string;
   badge: string;
   isAvailable: boolean;
-  features: string[];
 }
 
 export const featuredVehicles: Vehicle[] = [
@@ -24,7 +23,6 @@ export const featuredVehicles: Vehicle[] = [
     image: "/Cars/AudiRS7/IMG-20250720-WA0029.jpg",
     badge: "Disponible",
     isAvailable: true,
-    features: ["Carbon Optic", "Audi Exclusive", "4.0L V8", "Quattro"],
   },
   {
     id: 2,
@@ -37,7 +35,6 @@ export const featuredVehicles: Vehicle[] = [
     image: "/Cars/MercedesC63/IMG-20250814-WA0022.jpg",
     badge: "Vendu",
     isAvailable: false,
-    features: ["P31 Package"],
   },
   {
     id: 3,
@@ -50,6 +47,5 @@ export const featuredVehicles: Vehicle[] = [
     image: "/Cars/FordEdge/IMG-20250914-WA0038.jpg",
     badge: "Disponible",
     isAvailable: true,
-    features: ["SUV"],
   },
 ];

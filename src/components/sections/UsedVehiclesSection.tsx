@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Fuel, Settings, Calendar, Star, Shield, CheckCircle } from "lucide-react";
 import { featuredVehicles } from "@/Data/Cars";
-import { useModal } from "@/components/providers/ModalProvider";
+import { useModel } from "@/components/providers/ModelProvider";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -52,7 +52,7 @@ const cardVariants = {
 };
 
 const UsedVehiclesSection: React.FC = () => {
-  const { openModal } = useModal();
+  const { openModel } = useModel();
 
   return (
     <motion.section
@@ -107,7 +107,7 @@ const UsedVehiclesSection: React.FC = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 items-stretch"
           variants={containerVariants}
         >
-          {featuredVehicles.map((vehicle, index) => (
+          {featuredVehicles.slice(-3).map((vehicle, index) => (
             <motion.div
               key={vehicle.id}
               className="group relative overflow-hidden rounded-2xl transition-shadow duration-200 flex flex-col h-full"
@@ -300,85 +300,70 @@ const UsedVehiclesSection: React.FC = () => {
                   </div>
                 </motion.div>
 
-                {/* Features */}
-                <motion.div
-                  className="mb-6 min-h-[3rem]"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.7 + index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex flex-wrap gap-2 justify-start">
-                    {vehicle.features
-                      .slice(0, 3)
-                      .map((feature, featureIndex) => (
-                        <motion.span
-                          key={feature}
-                          className="inline-flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full border flex-shrink-0"
-                          style={{
-                            backgroundColor: "rgba(245, 158, 11, 0.08)",
-                            borderColor: "rgba(245, 158, 11, 0.2)",
-                            color: "var(--color-primary)",
-                          }}
-                          initial={{ opacity: 0, scale: 0.8 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{
-                            delay: 0.8 + index * 0.1 + featureIndex * 0.05,
-                            duration: 0.1,
-                          }}
-                          viewport={{ once: true }}
-                          whileHover={{ scale: 1.05 }}
-                        >
-                          <CheckCircle className="w-3 h-3 flex-shrink-0" />
-                          {feature}
-                        </motion.span>
-                      ))}
-                  </div>
-                </motion.div>
-
                 {/* Actions */}
                 <motion.div
-                  className="space-y-3 mt-auto"
+                  className="flex flex-col gap-3 mt-auto"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.9 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
+                  <div className="flex gap-3">
+                    <motion.button
+                      className="flex-1 py-3 px-4 rounded-lg font-semibold text-center transition-all duration-75 h-12 cursor-pointer"
+                      style={{
+                        backgroundColor: "var(--color-primary)",
+                        color: "var(--color-background)",
+                        boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+                      }}
+                      whileHover={{
+                        scale: 1.02,
+                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                      transition={{ duration: 0.2 }}
+                      onClick={() => openModel("car-contact", "", vehicle.name)}
+                    >
+                      Réserver un essai
+                    </motion.button>
+                    <motion.button
+                      className="flex-1 py-3 px-4 rounded-lg font-semibold border-2 text-center transition-all duration-75 h-12 cursor-pointer"
+                      style={{
+                        borderColor: "var(--color-primary)",
+                        color: "var(--color-primary)",
+                        backgroundColor: "transparent",
+                      }}
+                      whileHover={{
+                        backgroundColor: "rgba(245, 158, 11, 0.1)",
+                        borderColor: "var(--color-primary)",
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                      transition={{ duration: 0.2 }}
+                      onClick={() => (window.location.href = "tel:5144943795")}
+                    >
+                      Appeler
+                    </motion.button>
+                  </div>
                   <motion.button
                     className="w-full py-3 px-4 rounded-lg font-semibold text-center transition-all duration-75 h-12 cursor-pointer"
                     style={{
-                      backgroundColor: "var(--color-primary)",
-                      color: "var(--color-background)",
-                      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
-                    }}
-                    whileHover={{
-                      scale: 1.02,
-                      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ duration: 0.2 }}
-                    onClick={() => openModal("consultation")}
-                  >
-                    Réserver un essai
-                  </motion.button>
-                  <motion.button
-                    className="w-full py-3 px-4 rounded-lg font-semibold border-2 text-center transition-all duration-75 h-12 cursor-pointer"
-                    style={{
-                      borderColor: "var(--color-primary)",
-                      color: "var(--color-primary)",
+                      border: "2px solid #6b7280",
+                      color: "#6b7280",
                       backgroundColor: "transparent",
                     }}
                     whileHover={{
-                      backgroundColor: "rgba(245, 158, 11, 0.1)",
-                      borderColor: "var(--color-primary)",
+                      backgroundColor: "#f3f4f6",
+                      borderColor: "#4b5563",
+                      color: "#4b5563",
                     }}
                     whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.2 }}
-                    onClick={() =>
-                      (window.location.href = "https://www.picci.ca/cars")
-                    }
+                    onClick={() => {
+                      // Add functionality to show vehicle details
+                      console.log(`Voir détails pour ${vehicle.name}`);
+                    }}
                   >
-                    Voir les détails
+                    Voir tous les détails
                   </motion.button>
                 </motion.div>
               </div>

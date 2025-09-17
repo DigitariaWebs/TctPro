@@ -1,10 +1,10 @@
 "use client";
 
 import { Phone, Smartphone, Mail, MapPin, Users } from "lucide-react";
-import { useModal } from "@/components/providers/ModalProvider";
+import { useModel } from "@/components/providers/ModelProvider";
 
 export default function ContactSection() {
-  const { openModal } = useModal();
+  const { openModel } = useModel();
 
   return (
     <section
@@ -102,7 +102,7 @@ export default function ContactSection() {
 
               <div className="flex flex-col sm:flex-row gap-4 sm:justify-center">
                 <button
-                  onClick={() => openModal("consultation")}
+                  onClick={() => openModel("consultation")}
                   className="px-6 py-3 rounded-xl font-semibold text-white shadow hover:-translate-y-0.5 transition-transform cursor-pointer bg-[var(--color-primary-dark)]"
                 >
                   Demander une consultation
@@ -120,7 +120,7 @@ export default function ContactSection() {
           </div>
         </div>
 
-        {/* Modal is provided globally by ModalProvider */}
+        {/* Model is provided globally by ModelProvider */}
       </div>
     </section>
   );

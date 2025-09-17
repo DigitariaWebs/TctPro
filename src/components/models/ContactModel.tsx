@@ -4,14 +4,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import { User, Mail, Phone, MessageSquare, CheckCircle2, Briefcase, Award, Handshake, X, AlertCircle } from 'lucide-react';
 
-interface FormModalProps {
+interface ContactModelProps {
   isOpen: boolean;
   onClose: () => void;
   formType: string;
   serviceName?: string;
 }
 
-const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, serviceName }) => {
+const ContactModel: React.FC<ContactModelProps> = ({ isOpen, onClose, formType, serviceName }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [fileName, setFileName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -208,7 +208,7 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, servic
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            aria-labelledby="contact-modal-title"
+            aria-labelledby="contact-model-title"
           >
             <div
               className="hidden md:flex flex-col justify-between p-8 lg:p-10 text-white bg-[var(--color-background)]"
@@ -277,7 +277,7 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, servic
                   >
                     <div className="flex items-center justify-between mb-4">
                       <h2
-                        id="contact-modal-title"
+                        id="contact-model-title"
                         className="text-xl sm:text-2xl font-bold text-gray-800"
                       >
                         {currentContent.formTitle}
@@ -464,4 +464,4 @@ const FormModal: React.FC<FormModalProps> = ({ isOpen, onClose, formType, servic
   );
 };
 
-export default FormModal;
+export default ContactModel;
