@@ -1,4 +1,4 @@
-interface Vehicle {
+export interface Vehicle {
   id: number;
   name: string;
   year: number;
@@ -7,6 +7,7 @@ interface Vehicle {
   transmission: string;
   fuel: string;
   image: string;
+  gallery: string[];
   badge: string;
   isAvailable: boolean;
 }
@@ -21,6 +22,13 @@ export const featuredVehicles: Vehicle[] = [
     transmission: "Automatique",
     fuel: "gasoline",
     image: "/Cars/AudiRS7/IMG-20250720-WA0029.jpg",
+    gallery: [
+      "/Cars/AudiRS7/IMG-20250720-WA0029.jpg",
+      "/Cars/AudiRS7/IMG-20250720-WA0029.jpg",
+      "/Cars/AudiRS7/IMG-20250720-WA0029.jpg",
+      "/Cars/AudiRS7/IMG-20250720-WA0029.jpg",
+      "/Cars/AudiRS7/IMG-20250720-WA0029.jpg",
+    ],
     badge: "Disponible",
     isAvailable: true,
   },
@@ -33,6 +41,13 @@ export const featuredVehicles: Vehicle[] = [
     transmission: "Automatique",
     fuel: "gasoline",
     image: "/Cars/MercedesC63/IMG-20250814-WA0022.jpg",
+    gallery: [
+      "/Cars/MercedesC63/IMG-20250814-WA0022.jpg",
+      "/Cars/MercedesC63/IMG-20250814-WA0022.jpg",
+      "/Cars/MercedesC63/IMG-20250814-WA0022.jpg",
+      "/Cars/MercedesC63/IMG-20250814-WA0022.jpg",
+      "/Cars/MercedesC63/IMG-20250814-WA0022.jpg",
+    ],
     badge: "Vendu",
     isAvailable: false,
   },
@@ -45,6 +60,13 @@ export const featuredVehicles: Vehicle[] = [
     transmission: "Automatique",
     fuel: "gasoline",
     image: "/Cars/FordEdge/IMG-20250914-WA0038.jpg",
+    gallery: [
+      "/Cars/FordEdge/IMG-20250914-WA0038.jpg",
+      "/Cars/FordEdge/IMG-20250914-WA0038.jpg",
+      "/Cars/FordEdge/IMG-20250914-WA0038.jpg",
+      "/Cars/FordEdge/IMG-20250914-WA0038.jpg",
+      "/Cars/FordEdge/IMG-20250914-WA0038.jpg",
+    ],
     badge: "Disponible",
     isAvailable: true,
   },

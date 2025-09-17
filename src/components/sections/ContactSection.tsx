@@ -1,10 +1,35 @@
 "use client";
 
-import { Phone, Smartphone, Mail, MapPin, Users } from "lucide-react";
+import { Phone, Smartphone, Mail, MapPin, Users, Clock } from "lucide-react";
 import { useModel } from "@/components/providers/ModelProvider";
+import { useState, useEffect } from "react";
 
 export default function ContactSection() {
   const { openModel } = useModel();
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const checkBusinessHours = () => {
+      // Montreal, QC, Canada is in Eastern Time Zone (America/Toronto - standard for Eastern Canada)
+      const now = new Date();
+      const montrealTime = new Date(now.toLocaleString("en-CA", {timeZone: "America/Toronto"}));
+      
+      const hours = montrealTime.getHours();
+      const minutes = montrealTime.getMinutes();
+      const currentTime = hours * 60 + minutes; // Convert to minutes since midnight
+      
+      const openTime = 8 * 60; // 8:00 AM
+      const closeTime = 18 * 60; // 6:00 PM
+      
+      setIsOpen(currentTime >= openTime && currentTime < closeTime);
+    };
+
+    checkBusinessHours();
+    // Check every minute
+    const interval = setInterval(checkBusinessHours, 60000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
@@ -32,7 +57,7 @@ export default function ContactSection() {
               Informations de contact
             </h3>
 
-            <div className="space-y-9">
+            <div className="space-y-6">
               <a href="tel:5144943795" className="block">
                 <div className="group flex items-center gap-4 p-4 rounded-2xl ring-1 ring-white/10 transition-all hover:-translate-y-0.5 bg-[var(--color-background-light)]">
                   <div className="w-12 h-12 rounded-2xl grid place-items-center bg-[var(--color-primary-light)]">
@@ -85,6 +110,23 @@ export default function ContactSection() {
                   </div>
                 </div>
               </a>
+
+              <div className="group flex items-center gap-4 p-4 rounded-2xl ring-1 ring-white/10 transition-all hover:-translate-y-0.5 bg-[var(--color-background-light)]">
+                <div className="w-12 h-12 rounded-2xl grid place-items-center bg-[var(--color-primary)]">
+                  <Clock className="w-6 h-6 text-[var(--color-background)]" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-[var(--color-text)]">
+                    Heures d&apos;ouverture
+                  </h4>
+                  <p className="transition-colors group-hover:text-[var(--color-primary)] opacity-80 text-[var(--color-text)]">
+                    Tous les jours 8:00 - 18:00
+                  </p>
+                  <p className={`text-sm font-medium mt-1 ${isOpen ? 'text-green-600' : 'text-red-600'}`}>
+                    {isOpen ? 'Ouvert maintenant' : 'Fermé'}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -1,10 +1,19 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, Fuel, Settings, Calendar, Star, Shield, CheckCircle } from "lucide-react";
-import { featuredVehicles } from "@/Data/Cars";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Fuel,
+  Settings,
+  Calendar,
+  Star,
+  Shield,
+  CheckCircle,
+} from "lucide-react";
+import { featuredVehicles, Vehicle } from "@/Data/Cars";
 import { useModel } from "@/components/providers/ModelProvider";
+import CarDetailsModel from "@/components/models/CarDetailsModel";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -53,6 +62,8 @@ const cardVariants = {
 
 const UsedVehiclesSection: React.FC = () => {
   const { openModel } = useModel();
+  const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
+  const [isCarDetailsOpen, setIsCarDetailsOpen] = useState(false);
 
   return (
     <motion.section
@@ -310,19 +321,35 @@ const UsedVehiclesSection: React.FC = () => {
                 >
                   <div className="flex gap-3">
                     <motion.button
-                      className="flex-1 py-3 px-4 rounded-lg font-semibold text-center transition-all duration-75 h-12 cursor-pointer"
+                      className={`flex-1 py-3 px-4 rounded-lg font-semibold text-center transition-all duration-75 h-12 ${
+                        !vehicle.isAvailable
+                          ? "cursor-not-allowed opacity-50"
+                          : "cursor-pointer"
+                      }`}
                       style={{
-                        backgroundColor: "var(--color-primary)",
-                        color: "var(--color-background)",
+                        backgroundColor: !vehicle.isAvailable
+                          ? "#6b7280"
+                          : "var(--color-primary)",
+                        color: !vehicle.isAvailable
+                          ? "#9ca3af"
+                          : "var(--color-background)",
                         boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
                       }}
-                      whileHover={{
-                        scale: 1.02,
-                        boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
-                      }}
-                      whileTap={{ scale: 0.98 }}
+                      whileHover={
+                        !vehicle.isAvailable
+                          ? {}
+                          : {
+                              scale: 1.02,
+                              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+                            }
+                      }
+                      whileTap={!vehicle.isAvailable ? {} : { scale: 0.98 }}
                       transition={{ duration: 0.2 }}
-                      onClick={() => openModel("car-contact", "", vehicle.name)}
+                      disabled={!vehicle.isAvailable}
+                      onClick={() =>
+                        vehicle.isAvailable &&
+                        openModel("car-contact", "", vehicle.name)
+                      }
                     >
                       Réserver un essai
                     </motion.button>
@@ -359,8 +386,8 @@ const UsedVehiclesSection: React.FC = () => {
                     whileTap={{ scale: 0.98 }}
                     transition={{ duration: 0.2 }}
                     onClick={() => {
-                      // Add functionality to show vehicle details
-                      console.log(`Voir détails pour ${vehicle.name}`);
+                      setSelectedVehicle(vehicle);
+                      setIsCarDetailsOpen(true);
                     }}
                   >
                     Voir tous les détails
@@ -430,6 +457,16 @@ const UsedVehiclesSection: React.FC = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Car Details Modal */}
+      <CarDetailsModel
+        vehicle={selectedVehicle}
+        isOpen={isCarDetailsOpen}
+        onClose={() => {
+          setIsCarDetailsOpen(false);
+          setSelectedVehicle(null);
+        }}
+      />
     </motion.section>
   );
 };
