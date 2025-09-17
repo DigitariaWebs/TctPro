@@ -147,51 +147,15 @@ const UsedVehiclesSection: React.FC = () => {
                 />
 
                 {/* Badge */}
-                <motion.div
-                  className="absolute top-4 left-4"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                  viewport={{ once: true }}
+                <div
+                  className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-medium ${
+                    vehicle.isAvailable
+                      ? "bg-green-500/90 text-white"
+                      : "bg-red-500/90 text-white"
+                  }`}
                 >
-                  <div
-                    className={`flex items-center gap-2 px-4 py-2 rounded-full shadow-lg backdrop-blur-sm ${
-                      vehicle.isAvailable
-                        ? "bg-gradient-to-r from-emerald-500 to-emerald-600 ring-1 ring-emerald-400/50"
-                        : "bg-gradient-to-r from-rose-500 to-rose-600 ring-1 ring-rose-400/50"
-                    }`}
-                    style={{
-                      boxShadow: vehicle.isAvailable
-                        ? "0 2px 8px rgba(0, 0, 0, 0.1)"
-                        : "0 2px 8px rgba(0, 0, 0, 0.1)",
-                    }}
-                  >
-                    {vehicle.isAvailable ? (
-                      <motion.div
-                        initial={{ rotate: -90, scale: 0.5 }}
-                        animate={{ rotate: 0, scale: 1 }}
-                        transition={{ duration: 0.3, delay: 0.1 }}
-                      >
-                        <CheckCircle className="w-4 h-4 text-emerald-100" />
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        initial={{ rotate: 90, scale: 0.5 }}
-                        animate={{ rotate: 0, scale: 1 }}
-                        transition={{ duration: 0.3, delay: 0.1 }}
-                      >
-                        <Star className="w-4 h-4 text-rose-100" />
-                      </motion.div>
-                    )}
-                    <span
-                      className={`text-sm font-medium ${
-                        vehicle.isAvailable ? "text-emerald-50" : "text-rose-50"
-                      }`}
-                    >
-                      {vehicle.badge}
-                    </span>
-                  </div>
-                </motion.div>
+                  {vehicle.badge}
+                </div>
               </div>
 
               <div className="p-6 flex flex-col flex-1 relative">
@@ -412,7 +376,7 @@ const UsedVehiclesSection: React.FC = () => {
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
             }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => (window.location.href = "https://www.picci.ca/cars")}
+            onClick={() => (window.location.href = "/used-vehicles")}
           >
             <span>Voir tous nos véhicules</span>
             <motion.div
