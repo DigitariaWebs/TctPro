@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X, Grid3X3 } from "lucide-react";
+import Image from "next/image";
 import { Vehicle } from "../../Data/Cars";
 
 interface CarDetailsModelProps {
@@ -53,6 +54,21 @@ const CarDetailsModel: React.FC<CarDetailsModelProps> = ({
     }
   }, [isOpen]);
 
+  const navigateImage = useCallback(
+    (direction: "next" | "prev") => {
+      if (!allImages.length) return;
+
+      if (direction === "next") {
+        setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
+      } else {
+        setCurrentImageIndex(
+          (prev) => (prev - 1 + allImages.length) % allImages.length
+        );
+      }
+    },
+    [allImages.length]
+  );
+
   // Keyboard navigation
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -77,23 +93,10 @@ const CarDetailsModel: React.FC<CarDetailsModelProps> = ({
 
     window.addEventListener("keydown", handleKeyPress);
     return () => window.removeEventListener("keydown", handleKeyPress);
-  }, [isOpen, currentImageIndex, showThumbnails, onClose]);
-
-  const navigateImage = (direction: "next" | "prev") => {
-    if (!allImages.length) return;
-
-    if (direction === "next") {
-      setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
-    } else {
-      setCurrentImageIndex(
-        (prev) => (prev - 1 + allImages.length) % allImages.length
-      );
-    }
-  };
+  }, [isOpen, currentImageIndex, showThumbnails, onClose, navigateImage]);
 
   const goToImage = (index: number) => {
     setCurrentImageIndex(index);
-    setShowThumbnails(false);
   };
 
   if (!isOpen || !vehicle) return null;
@@ -198,7 +201,7 @@ const CarDetailsModel: React.FC<CarDetailsModelProps> = ({
                     <motion.button
                       key={index}
                       onClick={() => goToImage(index)}
-                      className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                      className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
                         index === currentImageIndex
                           ? "border-amber-500 opacity-100"
                           : "border-slate-600 opacity-60 hover:opacity-80"
@@ -206,10 +209,11 @@ const CarDetailsModel: React.FC<CarDetailsModelProps> = ({
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <img
+                      <Image
                         src={image}
                         alt={`Thumbnail ${index + 1}`}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                     </motion.button>
                   ))}
@@ -227,7 +231,7 @@ const CarDetailsModel: React.FC<CarDetailsModelProps> = ({
                   onClick={() => goToImage(index)}
                   className={`w-2 h-2 rounded-full transition-all ${
                     index === currentImageIndex
-                      ? "bg-amber-500 scale-125"
+                      ? "bg-amber-500 scale-100"
                       : "bg-slate-600 hover:bg-slate-500"
                   }`}
                 />
