@@ -15,7 +15,6 @@ import {
   Settings,
   Calendar,
   DollarSign,
-  Star,
 } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -201,7 +200,7 @@ const UsedVehiclesPage: React.FC = () => {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/50" />
 
         {/* Content */}
         <div className="relative z-10 flex items-center justify-center h-full">
@@ -530,34 +529,12 @@ const UsedVehiclesPage: React.FC = () => {
                         </h3>
                         <div className="flex items-center justify-between gap-2 mb-3">
                           <div className="flex items-center gap-2">
-                            <div className="flex items-center gap-1">
-                              <Star
-                                className="w-4 h-4 fill-current"
-                                style={{ color: "var(--color-primary)" }}
-                              />
-                              <Star
-                                className="w-4 h-4 fill-current"
-                                style={{ color: "var(--color-primary)" }}
-                              />
-                              <Star
-                                className="w-4 h-4 fill-current"
-                                style={{ color: "var(--color-primary)" }}
-                              />
-                              <Star
-                                className="w-4 h-4 fill-current"
-                                style={{ color: "var(--color-primary)" }}
-                              />
-                              <Star
-                                className="w-4 h-4 fill-current"
-                                style={{ color: "var(--color-primary)" }}
-                              />
-                            </div>
-                            <span
-                              className="text-sm"
-                              style={{ color: "#d1d5db" }}
+                            <div
+                              className="text-xl font-bold"
+                              style={{ color: "var(--color-primary)" }}
                             >
                               {vehicle.year}
-                            </span>
+                            </div>
                           </div>
                           <div
                             className="text-xl font-bold"

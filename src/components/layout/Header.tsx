@@ -2,23 +2,25 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  // Handle scroll effect
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
+  useEffect(() => {
+    const handleScroll = () => {
       if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
-    });
-  }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
@@ -45,8 +47,8 @@ const Header = () => {
           <nav className="hidden lg:flex items-center space-x-8">
             {[
               { href: "/", label: "Accueil" },
-            { href: "/#vehicules", label: "Véhicules d'occasion" },
-              { href: "#", label: "Financement" },
+              { href: "/#vehicules", label: "Véhicules d'occasion" },
+              { href: "/financement", label: "Financement" },
               { href: "/#a-propos", label: "À Propos" },
               { href: "#", label: "Service et entretien" },
             ].map((link, index) => (

@@ -184,31 +184,12 @@ const UsedVehiclesSection: React.FC = () => {
                       viewport={{ once: true }}
                     >
                       <div className="flex items-center gap-2">
-                        <div className="flex items-center gap-1">
-                          <Star
-                            className="w-4 h-4 fill-current"
-                            style={{ color: "var(--color-primary)" }}
-                          />
-                          <Star
-                            className="w-4 h-4 fill-current"
-                            style={{ color: "var(--color-primary)" }}
-                          />
-                          <Star
-                            className="w-4 h-4 fill-current"
-                            style={{ color: "var(--color-primary)" }}
-                          />
-                          <Star
-                            className="w-4 h-4 fill-current"
-                            style={{ color: "var(--color-primary)" }}
-                          />
-                          <Star
-                            className="w-4 h-4 fill-current"
-                            style={{ color: "var(--color-primary)" }}
-                          />
-                        </div>
-                        <span className="text-sm" style={{ color: "#d1d5db" }}>
+                        <div
+                          className="text-xl font-bold"
+                          style={{ color: "var(--color-primary)" }}
+                        >
                           {vehicle.year}
-                        </span>
+                        </div>
                       </div>
                       <div
                         className="text-xl font-bold"
