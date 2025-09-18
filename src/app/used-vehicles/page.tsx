@@ -696,7 +696,7 @@ const UsedVehiclesPage: React.FC = () => {
                           openCarDetails(vehicle);
                         }}
                       >
-                        Voir tous les détails
+                        Voir toutes les photos
                       </motion.button>
                     </div>
                   </div>
