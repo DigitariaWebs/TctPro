@@ -38,7 +38,7 @@ const HeroSection: React.FC = () => {
         <div className="relative flex items-center justify-center border-r-3 border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
-              Inventaire neuf
+              Véhicules d&apos;occasion
             </h2>
           </div>
         </div>
@@ -47,7 +47,7 @@ const HeroSection: React.FC = () => {
         <div className="relative flex items-center justify-center border-l-3 border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
-              Inventaire d&apos;occasion
+              Financement
             </h2>
           </div>
         </div>
@@ -56,7 +56,7 @@ const HeroSection: React.FC = () => {
         <div className="relative flex items-center justify-center border-r-3 border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
-              Rendez-vous au service
+              À Propos
             </h2>
           </div>
         </div>
@@ -65,7 +65,7 @@ const HeroSection: React.FC = () => {
         <div className="relative flex items-center justify-center border-l-3 border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
           <div className="text-center">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
-              Offres
+              Services et Entretien
             </h2>
           </div>
         </div>
