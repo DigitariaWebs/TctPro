@@ -190,7 +190,7 @@ const UsedVehiclesPage: React.FC = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative w-full h-screen">
+      <section className="relative w-full h-auto md:h-screen pt-16 md:pt-0">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -203,7 +203,7 @@ const UsedVehiclesPage: React.FC = () => {
         <div className="absolute inset-0 bg-black/50" />
 
         {/* Content */}
-        <div className="relative z-10 flex items-center justify-center h-full">
+        <div className="relative z-10 flex items-center justify-center min-h-[60vh] md:h-full py-8 md:py-0">
           <motion.div
             className="text-center text-white px-4"
             initial={{ opacity: 0, y: 30 }}
@@ -211,7 +211,7 @@ const UsedVehiclesPage: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-6"
+              className="text-2xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6"
               style={{ color: "var(--color-primary)" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -220,7 +220,7 @@ const UsedVehiclesPage: React.FC = () => {
               Véhicules d&apos;occasion
             </motion.h1>
             <motion.p
-              className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-8"
+              className="text-sm md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed mb-6 md:mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -246,20 +246,20 @@ const UsedVehiclesPage: React.FC = () => {
 
       {/* Main Content */}
       <section
-        className="py-20 relative"
+        className="py-8 md:py-20 relative"
         style={{ backgroundColor: "var(--color-background)" }}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Search and Filter Bar */}
           <motion.div
-            className="mb-12"
+            className="mb-6 md:mb-12"
             initial="hidden"
             animate="visible"
             variants={containerVariants}
           >
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50">
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-slate-700/50">
               {/* Search Bar */}
-              <div className="flex flex-col lg:flex-row gap-4 mb-6">
+              <div className="flex flex-col lg:flex-row gap-3 md:gap-4 mb-4 md:mb-6">
                 <div className="flex-1 relative">
                   <Search
                     className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"
@@ -270,17 +270,17 @@ const UsedVehiclesPage: React.FC = () => {
                     placeholder="Rechercher par modèle, marque..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                    className="w-full pl-10 md:pl-12 pr-4 py-2 md:py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-sm md:text-base"
                   />
                 </div>
                 <button
                   onClick={() => setShowFilters(!showFilters)}
-                  className="flex items-center space-x-2 px-6 py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white hover:bg-slate-600/50 transition-colors cursor-pointer"
+                  className="flex items-center space-x-2 px-4 md:px-6 py-2 md:py-3 bg-slate-700/50 border border-slate-600 rounded-lg text-white hover:bg-slate-600/50 transition-colors cursor-pointer text-sm md:text-base"
                 >
                   <SlidersHorizontal size={20} />
                   <span>Filtres</span>
                 </button>
-                <div className="flex space-x-2">
+                <div className="hidden md:flex space-x-2">
                   <button
                     onClick={() => setViewMode("grid")}
                     className={`p-3 rounded-lg border transition-colors cursor-pointer ${
@@ -312,7 +312,7 @@ const UsedVehiclesPage: React.FC = () => {
                   exit={{ opacity: 0, height: 0 }}
                   className="border-t border-slate-600 pt-6"
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-4 md:mb-6">
                     {/* Fuel Type */}
                     <div>
                       <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -464,8 +464,8 @@ const UsedVehiclesPage: React.FC = () => {
             <motion.div
               className={
                 viewMode === "grid"
-                  ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-                  : "space-y-6"
+                  ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+                  : "space-y-4 md:space-y-6"
               }
               variants={containerVariants}
             >
@@ -513,11 +513,15 @@ const UsedVehiclesPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className={`p-6 ${viewMode === "list" ? "flex-1" : ""}`}>
+                  <div
+                    className={`p-4 md:p-6 ${
+                      viewMode === "list" ? "flex-1" : ""
+                    }`}
+                  >
                     <div className="flex justify-between items-start mb-4">
                       <div className="flex-1 min-h-[3.5rem]">
                         <h3
-                          className="text-xl font-bold mb-2 leading-tight overflow-hidden"
+                          className="text-lg md:text-xl font-bold mb-2 leading-tight overflow-hidden"
                           style={{
                             color: "#ffffff",
                             display: "-webkit-box",
@@ -530,14 +534,14 @@ const UsedVehiclesPage: React.FC = () => {
                         <div className="flex items-center justify-between gap-2 mb-3">
                           <div className="flex items-center gap-2">
                             <div
-                              className="text-xl font-bold"
+                              className="text-lg md:text-xl font-bold"
                               style={{ color: "var(--color-primary)" }}
                             >
                               {vehicle.year}
                             </div>
                           </div>
                           <div
-                            className="text-xl font-bold"
+                            className="text-lg md:text-xl font-bold"
                             style={{ color: "var(--color-primary)" }}
                           >
                             {vehicle.price}
@@ -547,9 +551,9 @@ const UsedVehiclesPage: React.FC = () => {
                     </div>
 
                     {/* Vehicle Stats */}
-                    <div className="grid grid-cols-3 gap-4 mb-6">
+                    <div className="grid grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
                       <div
-                        className="flex flex-col items-center text-center p-3 rounded-lg min-h-[4rem]"
+                        className="flex flex-col items-center text-center p-2 md:p-3 rounded-lg min-h-[3rem] md:min-h-[4rem]"
                         style={{ backgroundColor: "rgba(245, 158, 11, 0.05)" }}
                       >
                         <Calendar
@@ -564,7 +568,7 @@ const UsedVehiclesPage: React.FC = () => {
                         </span>
                       </div>
                       <div
-                        className="flex flex-col items-center text-center p-3 rounded-lg min-h-[4rem]"
+                        className="flex flex-col items-center text-center p-2 md:p-3 rounded-lg min-h-[3rem] md:min-h-[4rem]"
                         style={{ backgroundColor: "rgba(245, 158, 11, 0.05)" }}
                       >
                         <Settings
@@ -579,7 +583,7 @@ const UsedVehiclesPage: React.FC = () => {
                         </span>
                       </div>
                       <div
-                        className="flex flex-col items-center text-center p-3 rounded-lg min-h-[4rem]"
+                        className="flex flex-col items-center text-center p-2 md:p-3 rounded-lg min-h-[3rem] md:min-h-[4rem]"
                         style={{ backgroundColor: "rgba(245, 158, 11, 0.05)" }}
                       >
                         <Fuel
@@ -597,9 +601,9 @@ const UsedVehiclesPage: React.FC = () => {
 
                     {/* Actions */}
                     <div className="flex flex-col gap-3 mt-auto">
-                      <div className="flex gap-3">
+                      <div className="flex gap-2 md:gap-3">
                         <motion.button
-                          className={`flex-1 py-3 px-4 rounded-lg font-semibold text-center transition-all duration-75 h-12 ${
+                          className={`flex-1 py-2 px-2 md:py-3 md:px-4 rounded-lg font-semibold text-center transition-all duration-75 h-10 md:h-12 text-xs md:text-base ${
                             !vehicle.isAvailable
                               ? "cursor-not-allowed opacity-50"
                               : "cursor-pointer"
@@ -634,7 +638,7 @@ const UsedVehiclesPage: React.FC = () => {
                           Réserver un essai
                         </motion.button>
                         <motion.button
-                          className="flex-1 py-3 px-4 rounded-lg font-semibold border-2 text-center transition-all duration-75 h-12 cursor-pointer"
+                          className="flex-1 py-2 px-2 md:py-3 md:px-4 rounded-lg font-semibold border-2 text-center transition-all duration-75 h-10 md:h-12 text-xs md:text-base cursor-pointer"
                           style={{
                             borderColor: "var(--color-primary)",
                             color: "var(--color-primary)",
@@ -655,7 +659,7 @@ const UsedVehiclesPage: React.FC = () => {
                         </motion.button>
                       </div>
                       <motion.button
-                        className="w-full py-3 px-4 rounded-lg font-semibold text-center transition-all duration-75 h-12 cursor-pointer"
+                        className="w-full py-2 px-2 md:py-3 md:px-4 rounded-lg font-semibold text-center transition-all duration-75 h-10 md:h-12 text-xs md:text-base cursor-pointer"
                         style={{
                           border: "2px solid #6b7280",
                           color: "#6b7280",

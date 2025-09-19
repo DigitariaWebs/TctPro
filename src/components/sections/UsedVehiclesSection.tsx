@@ -66,14 +66,10 @@ const UsedVehiclesSection: React.FC = () => {
   const [isCarDetailsOpen, setIsCarDetailsOpen] = useState(false);
 
   return (
-    <motion.section
+    <section
       id="vehicules"
-      className="py-20 relative overflow-hidden"
+      className="py-8 md:py-20 relative overflow-hidden"
       style={{ backgroundColor: "var(--color-background)" }}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      variants={containerVariants}
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -87,35 +83,27 @@ const UsedVehiclesSection: React.FC = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <motion.h2
-            className="text-5xl md:text-6xl font-bold mb-6 leading-tight"
+        <div className="text-center mb-8 md:mb-16">
+          <h2
+            className="text-2xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight"
             style={{ color: "var(--color-primary)" }}
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
           >
             Véhicules d&apos;occasion
-          </motion.h2>
+          </h2>
 
-          <motion.p
-            className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-8"
+          <p
+            className="text-sm md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed mb-6 md:mb-8"
             style={{ color: "var(--color-text)" }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
           >
             Découvrez notre sélection exclusive de véhicules d&apos;occasion
             premium, tous rigoureusement inspectés selon nos standards
             d&apos;excellence
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* Vehicle Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 items-stretch"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 mb-8 md:mb-16 items-stretch"
           variants={containerVariants}
         >
           {featuredVehicles.slice(-3).map((vehicle, index) => (
@@ -158,11 +146,11 @@ const UsedVehiclesSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-6 flex flex-col flex-1 relative">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex-1 min-h-[3.5rem]">
+              <div className="p-4 md:p-6 flex flex-col flex-1 relative">
+                <div className="flex justify-between items-start mb-3 md:mb-4">
+                  <div className="flex-1 min-h-[2.5rem] md:min-h-[3.5rem]">
                     <motion.h3
-                      className="text-xl font-bold mb-2 leading-tight overflow-hidden"
+                      className="text-lg md:text-xl font-bold mb-2 leading-tight overflow-hidden"
                       style={{
                         color: "#ffffff",
                         display: "-webkit-box",
@@ -177,7 +165,7 @@ const UsedVehiclesSection: React.FC = () => {
                       {vehicle.name}
                     </motion.h3>
                     <motion.div
-                      className="flex items-center justify-between gap-2 mb-3"
+                      className="flex items-center justify-between gap-2 mb-2 md:mb-3"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ delay: 0.4 + index * 0.1 }}
@@ -185,14 +173,14 @@ const UsedVehiclesSection: React.FC = () => {
                     >
                       <div className="flex items-center gap-2">
                         <div
-                          className="text-xl font-bold"
+                          className="text-lg md:text-xl font-bold"
                           style={{ color: "var(--color-primary)" }}
                         >
                           {vehicle.year}
                         </div>
                       </div>
                       <div
-                        className="text-xl font-bold"
+                        className="text-lg md:text-xl font-bold"
                         style={{ color: "var(--color-primary)" }}
                       >
                         {vehicle.price}
@@ -203,14 +191,14 @@ const UsedVehiclesSection: React.FC = () => {
 
                 {/* Vehicle Stats */}
                 <motion.div
-                  className="grid grid-cols-3 gap-4 mb-6"
+                  className="grid grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
                   <div
-                    className="flex flex-col items-center text-center p-3 rounded-lg min-h-[4rem]"
+                    className="flex flex-col items-center text-center p-2 md:p-3 rounded-lg min-h-[3rem] md:min-h-[4rem]"
                     style={{ backgroundColor: "rgba(245, 158, 11, 0.05)" }}
                   >
                     <Calendar
@@ -225,7 +213,7 @@ const UsedVehiclesSection: React.FC = () => {
                     </span>
                   </div>
                   <div
-                    className="flex flex-col items-center text-center p-3 rounded-lg min-h-[4rem]"
+                    className="flex flex-col items-center text-center p-2 md:p-3 rounded-lg min-h-[3rem] md:min-h-[4rem]"
                     style={{ backgroundColor: "rgba(245, 158, 11, 0.05)" }}
                   >
                     <Settings
@@ -240,7 +228,7 @@ const UsedVehiclesSection: React.FC = () => {
                     </span>
                   </div>
                   <div
-                    className="flex flex-col items-center text-center p-3 rounded-lg min-h-[4rem]"
+                    className="flex flex-col items-center text-center p-2 md:p-3 rounded-lg min-h-[3rem] md:min-h-[4rem]"
                     style={{ backgroundColor: "rgba(245, 158, 11, 0.05)" }}
                   >
                     <Fuel
@@ -264,9 +252,9 @@ const UsedVehiclesSection: React.FC = () => {
                   transition={{ delay: 0.9 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="flex gap-3">
+                  <div className="flex gap-2 md:gap-3">
                     <motion.button
-                      className={`flex-1 py-3 px-4 rounded-lg font-semibold text-center transition-all duration-75 h-12 ${
+                      className={`flex-1 py-2 px-2 md:py-3 md:px-4 rounded-lg font-semibold text-center transition-all duration-75 h-10 md:h-12 text-xs md:text-base ${
                         !vehicle.isAvailable
                           ? "cursor-not-allowed opacity-50"
                           : "cursor-pointer"
@@ -299,7 +287,7 @@ const UsedVehiclesSection: React.FC = () => {
                       Réserver un essai
                     </motion.button>
                     <motion.button
-                      className="flex-1 py-3 px-4 rounded-lg font-semibold border-2 text-center transition-all duration-75 h-12 cursor-pointer"
+                      className="flex-1 py-2 px-2 md:py-3 md:px-4 rounded-lg font-semibold border-2 text-center transition-all duration-75 h-10 md:h-12 text-xs md:text-base cursor-pointer"
                       style={{
                         borderColor: "var(--color-primary)",
                         color: "var(--color-primary)",
@@ -317,7 +305,7 @@ const UsedVehiclesSection: React.FC = () => {
                     </motion.button>
                   </div>
                   <motion.button
-                    className="w-full py-3 px-4 rounded-lg font-semibold text-center transition-all duration-75 h-12 cursor-pointer"
+                    className="w-full py-2 px-2 md:py-3 md:px-4 rounded-lg font-semibold text-center transition-all duration-75 h-10 md:h-12 text-xs md:text-base cursor-pointer"
                     style={{
                       border: "2px solid #6b7280",
                       color: "#6b7280",
@@ -412,7 +400,7 @@ const UsedVehiclesSection: React.FC = () => {
           setSelectedVehicle(null);
         }}
       />
-    </motion.section>
+    </section>
   );
 };
 

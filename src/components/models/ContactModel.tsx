@@ -400,7 +400,7 @@ const ContactModel: React.FC<ContactModelProps> = ({ isOpen, onClose, formType, 
                             Sélectionnez un service
                           </option>
                           <option value="Vente de Véhicules d'Occasion">
-                            Vente de Véhicules d'Occasion
+                            Vente de Véhicules d&apos;Occasion
                           </option>
                           <option value="Entretien et Réparation Automobile">
                             Entretien et Réparation Automobile

@@ -21,52 +21,55 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen">
-      {/* Background Image with blur transition */}
-      <div
-        className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700 ease-out ${
-          imageLoaded ? "filter-none" : "filter blur-sm scale-105"
-        }`}
-        style={{
-          backgroundImage: "url('/HeroSection.jpg')",
-        }}
-      />
+    <section className="relative w-full h-auto md:h-screen pt-16 md:pt-0">
+      {/* Mobile: Image container with aspect ratio, Desktop: Full screen */}
+      <div className="relative w-full h-auto aspect-video md:w-full md:h-full md:aspect-auto">
+        {/* Background Image */}
+        <div
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700 ease-out ${
+            imageLoaded ? "filter-none" : "filter blur-sm scale-105"
+          }`}
+          style={{
+            backgroundImage: "url('/HeroSection.jpg')",
+          }}
+        />
 
-      {/* Overlay Grid */}
-      <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
-        {/* Top Left Quadrant - Inventaire neuf */}
-        <div className="relative flex items-center justify-center border-r-3 border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
-          <div className="text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
-              Véhicules d&apos;occasion
-            </h2>
+        {/* Overlay Grid - matches image dimensions exactly */}
+        <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
+          {/* Top Left Quadrant - Inventaire neuf */}
+          <div className="relative flex items-center justify-center border-r border-b md:border-r-3 md:border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 ">
+            <div className="text-center">
+              <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
+                Véhicules d&apos;occasion
+              </h2>
+            </div>
           </div>
-        </div>
 
-        {/* Top Right Quadrant - Inventaire d'occasion */}
-        <div className="relative flex items-center justify-center border-l-3 border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
-          <div className="text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
-              Financement
-            </h2>
+          {/* Top Right Quadrant - Inventaire d'occasion */}
+          <div className="relative flex items-center justify-center border-l border-b md:border-l-3 md:border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 ">
+            <div className="text-center">
+              <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
+                Financement
+              </h2>
+            </div>
           </div>
-        </div>
 
-        {/* Bottom Left Quadrant - Rendez-vous au service */}
-        <div className="relative flex items-center justify-center border-r-3 border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
-          <div className="text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
-              À Propos
-            </h2>
+          {/* Bottom Left Quadrant - Rendez-vous au service */}
+          <div className="relative flex items-center justify-center border-r border-t md:border-r-3 md:border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300">
+            <div className="text-center">
+              <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
+                À Propos
+              </h2>
+            </div>
           </div>
-        </div>
 
-        {/* Bottom Right Quadrant - Offres */}
-        <div className="relative flex items-center justify-center border-l-3 border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer">
-          <div className="text-center">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
-              Services et Entretien
-            </h2>
+          {/* Bottom Right Quadrant - Offres */}
+          <div className="relative flex items-center justify-center border-l border-t md:border-l-3 md:border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300">
+            <div className="text-center">
+              <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
+                Services et Entretien
+              </h2>
+            </div>
           </div>
         </div>
       </div>

@@ -247,12 +247,12 @@ const ServiceCard = ({ service }: { service: (typeof servicesData)[0] }) => {
       whileInView="visible"
       whileHover="hover"
       viewport={{ once: true, amount: 0.3 }}
-      className="group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 hover:border-amber-500/30 transition-colors duration-300 hover:shadow-xl hover:shadow-amber-500/10 h-full flex flex-col"
+      className="group relative bg-slate-800/50 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-slate-700/50 hover:border-amber-500/30 transition-colors duration-300 hover:shadow-xl hover:shadow-amber-500/10 h-full flex flex-col"
     >
       {/* Icon */}
       <motion.div
         variants={iconVariants}
-        className="flex items-center justify-center w-16 h-16 rounded-xl bg-slate-700/50 mb-6 group-hover:bg-amber-500/10 transition-colors duration-300 flex-shrink-0"
+        className="flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-xl bg-slate-700/50 mb-4 md:mb-6 group-hover:bg-amber-500/10 transition-colors duration-300 flex-shrink-0"
       >
         <div className="text-slate-400 group-hover:text-amber-400 transition-colors duration-300">
           <IconComponent />
@@ -263,7 +263,7 @@ const ServiceCard = ({ service }: { service: (typeof servicesData)[0] }) => {
       <div className="flex flex-col flex-grow">
         {/* Title with consistent height */}
         <motion.h3
-          className="text-xl font-semibold text-slate-100 group-hover:text-white transition-colors duration-300 mb-4 min-h-[3.5rem] flex items-start"
+          className="text-lg md:text-xl font-semibold text-slate-100 group-hover:text-white transition-colors duration-300 mb-3 md:mb-4 min-h-[2.5rem] md:min-h-[3.5rem] flex items-start"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
@@ -274,7 +274,7 @@ const ServiceCard = ({ service }: { service: (typeof servicesData)[0] }) => {
 
         {/* Description with consistent height */}
         <motion.p
-          className="text-slate-400 leading-relaxed mb-6 min-h-[3rem] flex items-start"
+          className="text-sm md:text-base text-slate-400 leading-relaxed mb-4 md:mb-6 min-h-[2rem] md:min-h-[3rem] flex items-start"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
@@ -285,7 +285,7 @@ const ServiceCard = ({ service }: { service: (typeof servicesData)[0] }) => {
 
         {/* Bullets - Flex grow to take available space */}
         <motion.ul
-          className="space-y-2 flex-grow mb-6"
+          className="space-y-1 md:space-y-2 flex-grow mb-4 md:mb-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.5 }}
@@ -294,7 +294,7 @@ const ServiceCard = ({ service }: { service: (typeof servicesData)[0] }) => {
           {service.bullets.map((bullet, index) => (
             <motion.li
               key={index}
-              className="flex items-start text-sm text-slate-300"
+              className="flex items-start text-xs md:text-sm text-slate-300"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 + index * 0.1, duration: 0.4 }}
@@ -315,26 +315,26 @@ const ServicesTCTPro = () => {
   return (
     <section
       id="services"
-      className="relative py-20 px-4 sm:px-6 lg:px-8 bg-slate-900"
+      className="relative py-8 md:py-20 px-4 sm:px-6 lg:px-8 bg-slate-900"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 mb-6">
+          <div className="inline-flex items-center px-3 md:px-4 py-1 md:py-2 rounded-full bg-amber-500/10 border border-amber-500/20 mb-4 md:mb-6">
             <div className="w-1 h-1 rounded-full bg-amber-400 mr-2"></div>
-            <span className="text-amber-400 text-sm font-medium">
+            <span className="text-amber-400 text-xs md:text-sm font-medium">
               Montréal • 35+ Ans • Partenaire Auto Complet •
             </span>
           </div>
 
           {/* Main Heading */}
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6">
             Services et Entretien
             <span className="block text-amber-400">Automobiles Complets</span>
           </h2>
 
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
             De la vente au service, de la personnalisation à la
             consultation—votre partenaire de confiance pour tous vos besoins
             automobiles à Montréal.
@@ -347,7 +347,7 @@ const ServicesTCTPro = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 items-stretch"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-16 items-stretch"
         >
           {servicesData.map((service) => (
             <ServiceCard key={service.id} service={service} />
@@ -432,31 +432,31 @@ const ServicesTCTPro = () => {
         {/* Sticky Mini-CTA Row */}
         <div className="sticky bottom-8 z-10">
           <div className="bg-slate-800/95 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 shadow-2xl">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <span className="text-slate-300 font-medium">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
+              <span className="text-slate-300 font-medium text-sm md:text-base">
                 Prêt à commencer?
               </span>
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-2 md:gap-3">
                 <a
                   href="/used-vehicles"
-                  className="inline-flex items-center px-6 py-2.5 bg-amber-500 text-slate-900 rounded-lg font-semibold text-sm hover:bg-amber-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-slate-800"
+                  className="inline-flex items-center px-3 md:px-6 py-2 md:py-2.5 bg-amber-500 text-slate-900 rounded-lg font-semibold text-xs md:text-sm hover:bg-amber-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-slate-800"
                   aria-label="Voir notre inventaire de véhicules d'occasion"
                 >
-                  Voir l&apos;Inventaire
+                  Inventaire
                 </a>
                 <a
                   href="/financement"
-                  className="inline-flex items-center px-6 py-2.5 bg-transparent border border-amber-500 text-amber-400 rounded-lg font-semibold text-sm hover:bg-amber-500 hover:text-slate-900 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-slate-800"
+                  className="inline-flex items-center px-3 md:px-6 py-2 md:py-2.5 bg-transparent border border-amber-500 text-amber-400 rounded-lg font-semibold text-xs md:text-sm hover:bg-amber-500 hover:text-slate-900 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-slate-800"
                   aria-label="Explorer nos options de financement"
                 >
-                  Options de Financement
+                  Financement
                 </a>
                 <a
                   href="#contact"
-                  className="inline-flex items-center px-6 py-2.5 bg-transparent border border-amber-500 text-amber-400 rounded-lg font-semibold text-sm hover:bg-amber-500 hover:text-slate-900 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-slate-800"
+                  className="inline-flex items-center px-3 md:px-6 py-2 md:py-2.5 bg-transparent border border-amber-500 text-amber-400 rounded-lg font-semibold text-xs md:text-sm hover:bg-amber-500 hover:text-slate-900 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-slate-800"
                   aria-label="Nous contacter pour plus d'informations"
                 >
-                  Nous Contacter
+                  Contact
                 </a>
               </div>
             </div>

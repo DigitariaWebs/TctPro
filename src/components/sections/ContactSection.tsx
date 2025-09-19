@@ -2,7 +2,6 @@
 
 import { Phone, Smartphone, Mail, MapPin, Users, Clock } from "lucide-react";
 import { useModel } from "@/components/providers/ModelProvider";
-import { useState, useEffect } from "react";
 
 export default function ContactSection() {
   const { openModel } = useModel();

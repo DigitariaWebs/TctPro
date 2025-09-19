@@ -11,12 +11,12 @@ export default function AboutSection() {
       className="relative py-12 md:py-20 lg:py-24"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 items-center">
+        <div className="grid md:grid-cols-2 items-center gap-6 md:gap-8">
           {/* Image block with framed accent */}
           <div className="relative w-full md:max-w-[440px] lg:max-w-[460px] justify-self-center md:justify-self-start order-2 md:order-1 mb-8 md:mb-0 md:ml-6 lg:ml-8">
             {/* Accent rounded frame behind the image */}
             <div
-              className="absolute -inset-2 sm:-inset-3 md:-inset-4 rounded-[2.25rem] md:rounded-[3.5rem] border-[6px] sm:border-[8px] md:border-[10px] opacity-60 border-[var(--color-primary)]"
+              className="absolute -inset-1 sm:-inset-3 md:-inset-4 rounded-[2.25rem] md:rounded-[3.5rem] border-2 sm:border-[8px] md:border-[10px] opacity-60 border-[var(--color-primary)]"
               aria-hidden="true"
             />
 
@@ -53,18 +53,18 @@ export default function AboutSection() {
                 Expertise Automobile
               </span>
             </p>
-            <h2 className="mt-2 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-[var(--color-text)]">
+            <h2 className="mt-2 text-2xl sm:text-4xl md:text-6xl font-extrabold leading-tight text-[var(--color-text)]">
               À Votre Service
             </h2>
 
-            <div className="mt-4 space-y-3 text-[15px] md:text-lg leading-relaxed text-justify text-[var(--color-text)]">
+            <div className="mt-4 space-y-3 text-sm md:text-lg leading-relaxed text-justify text-[var(--color-text)]">
               {/* Encadré storytelling */}
               <div
-                className="relative rounded-2xl p-5 sm:p-6 ring-1 ring-black/5 shadow-sm overflow-hidden bg-[var(--color-background-light)] border-[var(--color-primary)]"
+                className="relative rounded-2xl p-3 sm:p-6 ring-1 ring-black/5 shadow-sm overflow-hidden bg-[var(--color-background-light)] border-[var(--color-primary)]"
                 aria-label="Encadré: Notre centre automobile"
               >
                 <div className="absolute -inset-px rounded-[inherit] pointer-events-none shadow-[inset_0_0_0_1px_var(--color-primary)]" />
-                <h3 className="text-xl font-bold mb-3 text-[var(--color-primary)]">
+                <h3 className="text-lg md:text-xl font-bold mb-3 text-[var(--color-primary)]">
                   Un centre complet à votre service
                 </h3>
                 <p className="text-[var(--color-text)]">
@@ -85,7 +85,7 @@ export default function AboutSection() {
                   <p>
                     Avec plus de{" "}
                     <span className="font-semibold text-[var(--color-primary)]">
-                       35 ans d&apos;expertise
+                      35 ans d&apos;expertise
                     </span>{" "}
                     dans le secteur automobile, nous mettons notre savoir-faire
                     à votre service pour vous offrir une expérience complète et

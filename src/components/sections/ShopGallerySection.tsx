@@ -24,17 +24,17 @@ const ShopGallerySection = () => {
   ];
 
   return (
-    <section className="py-6 px-8">
+    <section className="py-4 px-4 md:py-6 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="columns-5 gap-4 w-full">
+        <div className="columns-3 md:columns-5 gap-2 md:gap-4 w-full">
           {galleryImages.map((image, index) => (
-            <div key={index} className="block mb-4 break-inside-avoid">
+            <div key={index} className="block mb-2 md:mb-4 break-inside-avoid">
               <Image
                 src={`/ShopGallerySection/${image}`}
                 alt={`Gallery image ${index + 1}`}
                 width={300}
                 height={0}
-                className="w-full h-auto block rounded-lg shadow-md"
+                className="w-full h-auto block rounded-md md:rounded-lg shadow-sm md:shadow-md"
               />
             </div>
           ))}
