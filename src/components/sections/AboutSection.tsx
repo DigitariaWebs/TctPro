@@ -85,7 +85,7 @@ export default function AboutSection() {
                   <p>
                     Avec plus de{" "}
                     <span className="font-semibold text-[var(--color-primary)]">
-                      10 ans d&apos;expertise
+                       35 ans d&apos;expertise
                     </span>{" "}
                     dans le secteur automobile, nous mettons notre savoir-faire
                     à votre service pour vous offrir une expérience complète et

@@ -28,7 +28,7 @@ const Footer = () => {
             <p className="mb-4 text-sm leading-relaxed">
               Centre automobile complet offrant vente de véhicules
               d&apos;occasion, service d&apos;entretien et réparation pour une
-              expérience automobile complète depuis plus de 10 ans.
+              expérience automobile complète depuis plus de 35 ans.
             </p>
           </div>
 

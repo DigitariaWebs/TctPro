@@ -210,9 +210,7 @@ const ContactModel: React.FC<ContactModelProps> = ({ isOpen, onClose, formType, 
             aria-modal="true"
             aria-labelledby="contact-model-title"
           >
-            <div
-              className="hidden md:flex flex-col justify-between p-8 lg:p-10 text-white bg-[var(--color-background)]"
-            >
+            <div className="hidden md:flex flex-col justify-between p-8 lg:p-10 text-white bg-[var(--color-background)]">
               <div>
                 <button
                   onClick={onClose}
@@ -251,9 +249,7 @@ const ContactModel: React.FC<ContactModelProps> = ({ isOpen, onClose, formType, 
                         damping: 15,
                       }}
                     >
-                      <CheckCircle2
-                        className="w-20 h-20 text-[var(--color-primary)]"
-                      />
+                      <CheckCircle2 className="w-20 h-20 text-[var(--color-primary)]" />
                     </motion.div>
                     <h2 className="text-2xl font-bold text-gray-800 mt-5">
                       Demande envoyée !
@@ -403,9 +399,24 @@ const ContactModel: React.FC<ContactModelProps> = ({ isOpen, onClose, formType, 
                           <option value="" disabled>
                             Sélectionnez un service
                           </option>
-                          <option value="Transport de voitures usagées">Transport de voitures usagées</option>
-                          <option value="Vente de voitures usagées">Vente de voitures usagées</option>
-                          <option value="Consultation automobile">Consultation automobile</option>
+                          <option value="Vente de Véhicules d'Occasion">
+                            Vente de Véhicules d'Occasion
+                          </option>
+                          <option value="Entretien et Réparation Automobile">
+                            Entretien et Réparation Automobile
+                          </option>
+                          <option value="Services de Détaillage Professionnel">
+                            Services de Détaillage Professionnel
+                          </option>
+                          <option value="Personnalisation de Véhicules">
+                            Personnalisation de Véhicules
+                          </option>
+                          <option value="Consultation Automobile">
+                            Consultation Automobile
+                          </option>
+                          <option value="Services de Transport de Véhicules">
+                            Services de Transport de Véhicules
+                          </option>
                           <option value="Autre">Autre</option>
                         </select>
                       </motion.div>

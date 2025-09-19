@@ -322,9 +322,9 @@ const ServicesTCTPro = () => {
         <div className="text-center mb-16">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 mb-6">
-            <div className="w-2 h-2 rounded-full bg-amber-400 mr-2"></div>
+            <div className="w-1 h-1 rounded-full bg-amber-400 mr-2"></div>
             <span className="text-amber-400 text-sm font-medium">
-              Montréal • 10+ Ans • Partenaire Auto Complet
+              Montréal • 35+ Ans • Partenaire Auto Complet •
             </span>
           </div>
 
