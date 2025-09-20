@@ -2,7 +2,15 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle, CreditCard, Car, Settings, FileText, Users, Calculator } from "lucide-react";
+import {
+  CheckCircle,
+  CreditCard,
+  Car,
+  Settings,
+  FileText,
+  Users,
+  Calculator,
+} from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
@@ -23,7 +31,6 @@ const FinancementPage: React.FC = () => {
 
     return () => clearTimeout(timeout);
   }, []);
-
 
   const financingOptions = [
     {

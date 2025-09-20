@@ -1,0 +1,55 @@
+{
+  "name": "TCT Pro - Centre Automobile Montréal",
+  "short_name": "TCT Pro",
+  "description": "Centre automobile offrant vente de véhicules d'occasion premium, service d'entretien, detailing et customisation à Montréal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#f59e0b",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "fr-CA",
+  "dir": "ltr",
+  "categories": ["automotive", "business", "shopping"],
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/HeroSection.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "TCT Pro - Centre Automobile"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Véhicules d'occasion",
+      "short_name": "Véhicules",
+      "description": "Voir notre inventaire de véhicules d'occasion",
+      "url": "/used-vehicles",
+      "icons": [{ "src": "/favicon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Financement",
+      "short_name": "Financement",
+      "description": "Solutions de financement automobile",
+      "url": "/financement",
+      "icons": [{ "src": "/favicon.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

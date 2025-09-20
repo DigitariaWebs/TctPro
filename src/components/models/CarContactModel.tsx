@@ -25,7 +25,6 @@ const CarContactModel: React.FC<CarContactModelProps> = ({
   carName,
 }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [fileName, setFileName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [apiError, setApiError] = useState("");
@@ -40,7 +39,6 @@ const CarContactModel: React.FC<CarContactModelProps> = ({
     if (!isOpen) {
       const timer = setTimeout(() => {
         setIsSubmitted(false);
-        setFileName("");
         setFormData({ name: "", email: "", phone: "", details: "" });
         setIsLoading(false);
         setErrors({});
