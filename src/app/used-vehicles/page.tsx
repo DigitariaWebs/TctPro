@@ -20,6 +20,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { featuredVehicles, Vehicle } from "@/Data/Cars";
 import CarDetailsModel from "@/components/models/CarDetailsModel";
+import { useModel } from "@/components/providers/ModelProvider";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -56,6 +57,7 @@ type SortDirection = "asc" | "desc";
 type ViewMode = "grid" | "list";
 
 const UsedVehiclesPage: React.FC = () => {
+  const { openModel } = useModel();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedFuel, setSelectedFuel] = useState<string>("");
   const [selectedTransmission, setSelectedTransmission] = useState<string>("");
@@ -631,7 +633,7 @@ const UsedVehiclesPage: React.FC = () => {
                           onClick={(e) => {
                             e.stopPropagation();
                             if (vehicle.isAvailable) {
-                              // Handle contact modal or navigation
+                              openModel("car-contact", "", vehicle.name);
                             }
                           }}
                         >
@@ -652,7 +654,7 @@ const UsedVehiclesPage: React.FC = () => {
                           transition={{ duration: 0.2 }}
                           onClick={(e) => {
                             e.stopPropagation();
-                            window.location.href = "tel:5144943795";
+                            window.location.href = "tel:+15144943795";
                           }}
                         >
                           Appeler

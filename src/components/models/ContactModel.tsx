@@ -115,10 +115,9 @@ const ContactModel: React.FC<ContactModelProps> = ({ isOpen, onClose, formType, 
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          service: formData.service || serviceName,
-          details: formData.details,
+          message: formData.details, // Map details to message for API
           formType,
-          serviceName,
+          serviceName: formData.service || serviceName,
           fileName: fileName || undefined,
         }),
       });
@@ -230,12 +229,12 @@ const ContactModel: React.FC<ContactModelProps> = ({ isOpen, onClose, formType, 
               </div>
             </div>
 
-            <div className="p-4 sm:p-6 md:p-8 flex flex-col justify-start">
+            <div className="p-4 sm:p-6 md:p-8 flex flex-col justify-start min-h-[500px]">
               <AnimatePresence mode="wait">
                 {isSubmitted ? (
                   <motion.div
                     key="thankyou"
-                    className="flex flex-col items-center justify-center text-center"
+                    className="flex flex-col items-center justify-center text-center h-full"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}

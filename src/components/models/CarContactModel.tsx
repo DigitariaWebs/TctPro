@@ -112,7 +112,7 @@ const CarContactModel: React.FC<CarContactModelProps> = ({
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/car-contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -121,11 +121,9 @@ const CarContactModel: React.FC<CarContactModelProps> = ({
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          service: carName,
+          carName: carName,
           details: formData.details,
-          formType: "car-contact",
-          serviceName: carName,
-          fileName: fileName || undefined,
+          message: formData.details,
         }),
       });
 
@@ -223,7 +221,7 @@ const CarContactModel: React.FC<CarContactModelProps> = ({
                 {isSubmitted ? (
                   <motion.div
                     key="thankyou"
-                    className="flex flex-col items-center justify-center text-center"
+                    className="flex flex-col items-center justify-center text-center min-h-[600px]"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
@@ -255,6 +253,7 @@ const CarContactModel: React.FC<CarContactModelProps> = ({
                 ) : (
                   <motion.div
                     key="form"
+                    className="min-h-[600px] flex flex-col"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -279,7 +278,7 @@ const CarContactModel: React.FC<CarContactModelProps> = ({
                     </p>
                     <motion.form
                       onSubmit={handleSubmit}
-                      className="space-y-4"
+                      className="space-y-4 flex-grow flex flex-col"
                       initial="hidden"
                       animate="visible"
                       variants={{
@@ -406,7 +405,7 @@ const CarContactModel: React.FC<CarContactModelProps> = ({
                           hidden: { opacity: 0, x: -20 },
                           visible: { opacity: 1, x: 0 },
                         }}
-                        className="pt-2"
+                        className="pt-4"
                       >
                         <motion.button
                           type="submit"

@@ -33,7 +33,7 @@ export default function ContactSection() {
             </h3>
 
             <div className="space-y-6">
-              <a href="tel:5144943795" className="block">
+              <a href="tel:+15144943795" className="block">
                 <div className="group flex items-center gap-4 p-4 rounded-2xl ring-1 ring-white/10 transition-all hover:-translate-y-0.5 bg-[var(--color-background-light)]">
                   <div className="w-12 h-12 rounded-2xl grid place-items-center bg-[var(--color-primary-light)]">
                     <Smartphone className="w-6 h-6 text-[var(--color-background)]" />
@@ -123,7 +123,7 @@ export default function ContactSection() {
                 </button>
 
                 <a
-                  href="tel:5144943795"
+                  href="tel:+15144943795"
                   className="px-6 py-3 rounded-xl font-semibold ring-1 ring-white/20 backdrop-blur transition-transform inline-flex items-center justify-center hover:-translate-y-0.5 bg-[var(--color-background-transparent)] text-[var(--color-text)]"
                 >
                   <Phone className="w-5 h-5 mr-2" />

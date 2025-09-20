@@ -299,7 +299,9 @@ const UsedVehiclesSection: React.FC = () => {
                       }}
                       whileTap={{ scale: 0.98 }}
                       transition={{ duration: 0.2 }}
-                      onClick={() => (window.location.href = "tel:5144943795")}
+                      onClick={() =>
+                        (window.location.href = "tel:+15144943795")
+                      }
                     >
                       Appeler
                     </motion.button>

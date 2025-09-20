@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 const HeroSection: React.FC = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -37,40 +38,52 @@ const HeroSection: React.FC = () => {
         {/* Overlay Grid - matches image dimensions exactly */}
         <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
           {/* Top Left Quadrant - Inventaire neuf */}
-          <div className="relative flex items-center justify-center border-r border-b md:border-r-3 md:border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 ">
+          <Link
+            href="/used-vehicles"
+            className="relative flex items-center justify-center border-r border-b md:border-r-3 md:border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer"
+          >
             <div className="text-center">
               <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
                 Véhicules d&apos;occasion
               </h2>
             </div>
-          </div>
+          </Link>
 
           {/* Top Right Quadrant - Inventaire d'occasion */}
-          <div className="relative flex items-center justify-center border-l border-b md:border-l-3 md:border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 ">
+          <Link
+            href="/financement"
+            className="relative flex items-center justify-center border-l border-b md:border-l-3 md:border-b-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer"
+          >
             <div className="text-center">
               <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
                 Financement
               </h2>
             </div>
-          </div>
+          </Link>
 
           {/* Bottom Left Quadrant - Rendez-vous au service */}
-          <div className="relative flex items-center justify-center border-r border-t md:border-r-3 md:border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300">
+          <Link
+            href="/#a-propos"
+            className="relative flex items-center justify-center border-r border-t md:border-r-3 md:border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer"
+          >
             <div className="text-center">
               <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
                 À Propos
               </h2>
             </div>
-          </div>
+          </Link>
 
           {/* Bottom Right Quadrant - Offres */}
-          <div className="relative flex items-center justify-center border-l border-t md:border-l-3 md:border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300">
+          <Link
+            href="/#services"
+            className="relative flex items-center justify-center border-l border-t md:border-l-3 md:border-t-3 border-white/80 bg-black/30 hover:bg-white/20 hover:shadow-2xl hover:text-gray-100 transition-all duration-300 cursor-pointer"
+          >
             <div className="text-center">
               <h2 className="text-lg md:text-3xl lg:text-4xl font-bold text-white tracking-wide">
                 Services et Entretien
               </h2>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>
