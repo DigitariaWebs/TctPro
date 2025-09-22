@@ -66,7 +66,7 @@ export default function ContactSection() {
               </a>
 
               <a
-                href="https://www.google.com/maps/search/?api=1&query=11770+5e+Avenue+Montreal+QC+H1E+2X4"
+                href="https://www.google.com/maps/search/?api=1&query=11760+5e+Avenue+Montreal+QC+H1E+2X4"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"
@@ -80,7 +80,7 @@ export default function ContactSection() {
                       Adresse
                     </h4>
                     <p className="transition-colors group-hover:text-[var(--color-primary)] opacity-80 text-[var(--color-text)]">
-                      11770 5e Avenue Montréal, QC H1E 2X4
+                      11760 5e Avenue Montréal, QC H1E 2X4
                     </p>
                   </div>
                 </div>
