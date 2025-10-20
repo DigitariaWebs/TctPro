@@ -42,6 +42,7 @@ const Footer = () => {
                   { href: "/", label: "Accueil" },
                   { href: "/#vehicules", label: "Véhicules d'occasion" },
                   { href: "/#contact", label: "Contact" },
+                  { href: "/api-docs", label: "API Documentation" },
                 ].map((link, index) => (
                   <li key={index}>
                     <Link
