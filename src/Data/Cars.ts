@@ -15,7 +15,7 @@ export interface Vehicle {
 export const featuredVehicles: Vehicle[] = [
   {
     id: 1,
-    name: "Audi RS7 Carbon Optic Audi Exclusive",
+    name: "Audi RS7 Carbon Optic Exclusive",
     year: 2018,
     price: "88 900 CAD",
     mileage: "82,323 km",

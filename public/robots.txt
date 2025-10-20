@@ -9,7 +9,6 @@ Crawl-delay: 1
 
 # Disallow admin areas (if any in future)
 Disallow: /admin/
-Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
 

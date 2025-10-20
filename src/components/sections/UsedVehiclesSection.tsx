@@ -252,7 +252,7 @@ const UsedVehiclesSection: React.FC = () => {
                   transition={{ delay: 0.9 + index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="flex gap-2 md:gap-3">
+                  <div className="flex flex-col gap-2 md:flex-row md:gap-3">
                     <motion.button
                       className={`flex-1 py-2 px-2 md:py-3 md:px-4 rounded-lg font-semibold text-center transition-all duration-75 h-10 md:h-12 text-xs md:text-base ${
                         !vehicle.isAvailable
@@ -267,6 +267,7 @@ const UsedVehiclesSection: React.FC = () => {
                           ? "#9ca3af"
                           : "var(--color-background)",
                         boxShadow: "0 2px 8px rgba(0, 0, 0, 0.1)",
+                        whiteSpace: "nowrap",
                       }}
                       whileHover={
                         !vehicle.isAvailable
